@@ -463,6 +463,7 @@ tests['pvlan_host_port'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host:             switchport_modes[0],
     switchport_mode_private_vlan_host_association: %w(100 102),
@@ -479,6 +480,7 @@ tests['pvlan_promisc_port'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host:         switchport_modes[1],
     switchport_mode_private_vlan_host_promisc: ['100', '101-103'],
@@ -529,6 +531,7 @@ tests['pvlan_trunk_allow_vlan'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(5|6|7|9)k',
   manifest_props:     {
     switchport_private_vlan_trunk_allowed_vlan: vlan_assoc
   },
@@ -543,6 +546,7 @@ tests['pvlan_trunk_native_vlan'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(5|6|7|9)k',
   manifest_props:     {
     switchport_private_vlan_trunk_native_vlan: 100
   },
@@ -556,6 +560,7 @@ tests['pvlan_mapping_svi'] = {
   desc:             '6.15 Pvlan vlan mapping for svi',
   operating_system: 'nexus',
   intf_type:        'vlan',
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:   {
     private_vlan_mapping: vlan_assoc
   },
@@ -570,6 +575,7 @@ tests['pvlan_host_port_association_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host_association: 'default'
   },
@@ -583,6 +589,7 @@ tests['pvlan_promisc_port_association_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host_promisc: 'default'
   },
@@ -624,6 +631,7 @@ tests['pvlan_trunk_allow_vlan_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(5|6|7|9)k',
   manifest_props:     {
     switchport_private_vlan_trunk_allowed_vlan: 'default'
   },
@@ -637,6 +645,7 @@ tests['pvlan_host_port_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host: 'disabled'
   },
@@ -650,6 +659,7 @@ tests['pvlan_promisc_port_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:     {
     switchport_mode_private_vlan_host: 'disabled'
   },
@@ -663,6 +673,7 @@ tests['switchport_private_vlan_trunk_native_vlan_default'] = {
   intf_type:          'ethernet',
   preclean:           true,
   sys_def_switchport: true,
+  platform:         'n(5|6|7|9)k',
   manifest_props:     {
     switchport_private_vlan_trunk_native_vlan: 'default'
   },
@@ -701,6 +712,7 @@ tests['private_vlan_mapping_svi_default'] = {
   desc:             '6.26 Pvlan svi association default config',
   operating_system: 'nexus',
   intf_type:        'vlan',
+  platform:         'n(3|5|6|7|9)k',
   manifest_props:   {
     private_vlan_mapping: 'default'
   },
